@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Products</title>
+</head>
+<body>
+    <h1 style="text-align: center;">List Detail Products</h1>
+    <table border="1" align="center">
+        <tr>
+            <th scope="col">Category Name</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Price</th>
+            <th scope="col">Laba Bersih x jumlah stock</th>
+        </tr>
+        <% products.forEach(product => { %>
+        <tr>
+            <td><%= product.getFullName() %></td>
+            <td><%= product.stock %></td>
+            <td><%= product.price %></td>
+            <td><%= product.getLabaBersih() %></td>
+        </tr>
+        <% }) %>
+        
+        
+        <tr>
+            <td colspan="3"><b>Jumlah Total Laba :</b></td>
+            <td><%= total[0].getDataValue('result') %> </td>
+        </tr>
+       
+        <tr>
+            <td align="center" colspan="6"><a href="/products/add"><input type="submit" value="Add Product"></a></td>
+        </tr>
+    </table>
+</body>
+</html>

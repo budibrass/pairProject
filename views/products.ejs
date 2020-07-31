@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+<body>
+    <h1 style="text-align: center;">List Products</h1>
+    <table border="1" align="center">
+        <tr>
+            <td colspan="3" align="left"><a href="/users"><input type="submit" value="Data Customers"></a>
+            </td>
+            <td colspan="3" align="right"><a href="/products/detail"><input type="submit" value="Detail Product"></a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="col">Category</th>
+            <th scope="col">Name</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Price</th>
+            <th scope="col">Admin Id</th>
+            <th scope="col">Action</th>
+        </tr>
+        <% products.forEach(product => { %>
+        <tr>
+            <td><%= product.category %></td>
+            <td><%= product.name %></td>
+            <td><%= product.stock %></td>
+            <td><%= product.price %></td>
+            <td><%= product.Admin.id %></td>
+            <td>
+                <a class="btn btn-primary" href="/products/<%= product.id %>/edit" role="button">Edit</a>
+                <a class="btn btn-danger" href="/products/<%= product.id %>/delete" role="button">Delete</a>
+                <a class="btn btn-danger" href="/products/<%= product.id %>/beli" role="button">Beli</a>
+            </td>
+        </tr>
+        <% }) %>
+        
+
+        <tr>
+            <td colspan="2"><b>Jumlah Total Stok Barang</b></td>
+            <td></td>
+            <td colspan="3"></td>
+        </tr>
+        
+        <tr>
+            <td align="center" colspan="6"><a href="/products/add"><input type="submit" value="Add Product"></a></td>
+        </tr>
+    </table>
+</body>
+</html>

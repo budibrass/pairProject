@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+</head>
+<body>
+    <h1 style="text-align: center;">List Users</h1>
+    <table border="1" align="center">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+            <th scope="col">Password</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Hp</th>
+            <th scope="col">Action</th>
+        </tr>
+        <% users.forEach(user => { %>
+        <tr>
+            <td><%= user.name %></td>
+            <td><%= user.username %></td>
+            <td><%= user.email %></td>
+            <td><%= user.password %></td>
+            <td><%= user.gender %></td>
+            <td><%= user.hp %></td>
+            <td>
+                <a class="btn btn-danger" href="/users/<%= user.id %>/delete" role="button">Delete</a>
+            </td>
+        </tr>
+        <% }) %>
+    </table>
+</body>
+</html>
